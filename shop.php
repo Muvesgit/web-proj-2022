@@ -69,7 +69,7 @@ $conn->close();
 </div>
 
 <div id="shopShowcase" class="shopShowcase">
-
+    <h1>Shop</h1>
 </div>
 
 
@@ -117,8 +117,10 @@ for(let i = 0; i < numOfItems; ++i){
     h2.innerHTML = savedData[i].price;
 
     let a = document.createElement("a");
+    let h22 = document.createElement("h2");
+    h22.innerHTML = "Add to cart";
+    a.appendChild(h22);
     a.href = "";
-    a.innerHTML = "Add to cart";
 
     let card = document.createElement("div");
     card.classList.add("itemCard");
