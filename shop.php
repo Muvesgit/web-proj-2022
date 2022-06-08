@@ -93,7 +93,6 @@ else{
 var numOfItems = "<?php echo $index;?>";
 
 var savedData = <?php echo json_encode($savedData); ?>;
-// console.log(savedData);
 var currentid = 0;
 
 for(let i = 0; i < numOfItems; ++i){
@@ -114,13 +113,13 @@ for(let i = 0; i < numOfItems; ++i){
     h1.innerHTML = savedData[i].full_name;
 
     let h2 = document.createElement("h2");
-    h2.innerHTML = savedData[i].price;
+    h2.innerHTML = savedData[i].price + " RON";
 
-    let a = document.createElement("a");
     let h22 = document.createElement("h2");
-    h22.innerHTML = "Add to cart";
-    a.appendChild(h22);
-    a.href = "";
+    h22.innerHTML = "Order";
+    h22.onclick = function(id = parseInt(i)) {
+        alert("Ordered " + savedData[i].full_name);
+    };
 
     let card = document.createElement("div");
     card.classList.add("itemCard");
@@ -128,7 +127,7 @@ for(let i = 0; i < numOfItems; ++i){
     card.appendChild(img);
     card.appendChild(h1);
     card.appendChild(h2);
-    card.appendChild(a);
+    card.appendChild(h22);
     
     document.getElementById(currentid).appendChild(card);
 }

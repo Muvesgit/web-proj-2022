@@ -58,6 +58,10 @@
 
     <div class="infoShowcase">
         <img id="accountimg" src="<?php echo $img; ?>">
+        <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+        <div id="saveButton" class="hiddenitem accountButton">
+            <h1>SAVE</h1>
+        </div>
 
         <h2>First Name: <?php echo $fname; ?></h2>
         <h2>Last Name: <?php echo $lname; ?></h2>
@@ -95,4 +99,21 @@ else{
 if("<?php echo $img ?>" == ""){
     document.getElementById("accountimg").src = "src/img/defaultuser.jpg";
 }
+
+document.getElementById("image-input").addEventListener("change", function() {
+	var image = document.getElementById('accountimg');
+	image.src = URL.createObjectURL(event.target.files[0]);
+
+    document.getElementById("saveButton").classList.remove("hiddenitem");
+    document.getElementById("saveButton").classList.add("griditem");
+});
+
+document.getElementById("saveButton").addEventListener("click", function(){
+    var save = document.createElement('a');
+    save.href = document.getElementById("accountimg").src;
+    save.target = '_blank';
+    save.download = 'photo.jpg'
+
+    save.click();
+});
 </script>

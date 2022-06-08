@@ -4,11 +4,15 @@ body{
 }
 
 .hiddenitem{
-    display: none;
+    display: none !important;
 }
 
 .shownitem{
     display: block;
+}
+
+.griditem{
+    display: grid;
 }
 
 /* header */
@@ -239,6 +243,10 @@ body{
     width: 100px;
 }
 
+#saveButton{
+    margin-top: 30px;
+}
+
 /* login */
 
 .formwrapper label{
@@ -360,6 +368,12 @@ body{
     font-size: 2em;
     margin-left: 20px;
     transition: all .3s ease;
+    text-align: center;
+}
+
+.itemCard h2{
+    cursor: pointer;
+    text-align: center;
 }
 
 .shopShowcase .itemCard{
