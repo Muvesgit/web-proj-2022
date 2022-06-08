@@ -70,6 +70,7 @@ $conn->close();
 
 <div id="shopShowcase" class="shopShowcase">
     <h1>Shop</h1>
+    <input id="searchbar" onkeyup="search_product()" type="text" name="search" placeholder="Search products..">
 </div>
 
 
@@ -131,5 +132,21 @@ for(let i = 0; i < numOfItems; ++i){
     
     document.getElementById(currentid).appendChild(card);
 }
+
+function search_product() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let prodlen = document.getElementsByClassName('itemCard');
+    
+    for (i = 0; i < prodlen.length; i++) { 
+      if (!prodlen[i].children[1].innerHTML.toLowerCase().includes(input)) {
+        prodlen[i].style.display="none";
+      }
+      else {
+        prodlen[i].style.display="block";                 
+      }
+    }
+}
+
 
 </script>
