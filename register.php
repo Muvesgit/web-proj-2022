@@ -30,7 +30,7 @@
 
     <div class="headernav">
         <a href="index.php">HOME</a>
-        <a href="#">ABOUT</a>
+        <a href="about.php">ABOUT</a>
         <a id="shoplink" href="#">SHOP</a>
     </div>
 

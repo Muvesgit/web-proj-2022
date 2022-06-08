@@ -59,7 +59,7 @@ $conn->close();
 
     <div class="headernav">
         <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
+        <a href="about.php">ABOUT</a>
         <a id="shoplink" href="#">SHOP</a>
     </div>
 
