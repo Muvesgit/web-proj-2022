@@ -68,7 +68,7 @@ $conn->close();
     </a>
 </div>
 
-<div class="shopShowcase">
+<div id="shopShowcase" class="shopShowcase">
 
 </div>
 
@@ -90,6 +90,45 @@ else{
     document.getElementById("shoplink").href = "login.php";
 }
 
-console.log("<?php echo $index;?>")
+var numOfItems = "<?php echo $index;?>";
+
+var savedData = <?php echo json_encode($savedData); ?>;
+// console.log(savedData);
+var currentid = 0;
+
+for(let i = 0; i < numOfItems; ++i){
+    if(i % 3 == 0){
+        currentid++;
+
+        let row = document.createElement("div");
+        row.classList.add("itemRow");
+        row.id = currentid;
+        document.getElementById("shopShowcase").appendChild(row);
+    }
+
+
+    let img = document.createElement("img");
+    img.src = savedData[i].imgsrc;
+
+    let h1 = document.createElement("h1");
+    h1.innerHTML = savedData[i].full_name;
+
+    let h2 = document.createElement("h2");
+    h2.innerHTML = savedData[i].price;
+
+    let a = document.createElement("a");
+    a.href = "";
+    a.innerHTML = "Add to cart";
+
+    let card = document.createElement("div");
+    card.classList.add("itemCard");
+
+    card.appendChild(img);
+    card.appendChild(h1);
+    card.appendChild(h2);
+    card.appendChild(a);
+    
+    document.getElementById(currentid).appendChild(card);
+}
 
 </script>

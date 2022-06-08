@@ -338,5 +338,19 @@ body{
 /* shop */
 
 .shopShowcase{
-    
+    display: block;
+}
+
+.itemRow{
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopShowcase .itemCard{
+    margin-right: 0;
+}
+
+.shopShowcase .itemCard:hover{
+    margin-top: -50px;
+    transition: all .3s ease;
 }
