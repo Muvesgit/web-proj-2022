@@ -1,0 +1,237 @@
+body{
+    background-color: rgb(36, 31, 30);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hiddenitem{
+    display: none;
+}
+
+.shownitem{
+    display: block;
+}
+
+/* header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-top: 30px;
+    border-bottom: .1px solid rgb(180, 0, 0);
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.headernav{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.headernav a{
+    color: white;
+    margin-right: 50px;
+    transition: all .3s ease;
+    font-weight: 600;
+}
+
+.headernav a:hover{
+    color: rgb(180, 0, 0);
+    transition: all .3s ease;
+}
+
+.logoPart img{
+    width: auto;
+    height: 50px;
+    margin-top: -10px;
+}
+
+.accountButton{
+    height: 50px;
+    width: 100px;
+    background-color: rgb(180, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    margin-top: -10px;
+    transition: all .3s ease;
+}
+
+.accountButton h1{
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.accountButton:hover{
+    background-color: rgb(31, 31, 31);
+    transition: all .3s ease;
+}
+
+.accountButton:hover h1{
+    color: white;
+    transition: all .3s ease;
+}
+
+/* footer */
+
+.footer{
+    background-color: rgb(31, 31, 31);
+}
+
+.footer h1{
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+/* homepage */
+
+@keyframes moveup {
+    from {margin-top: 100px; display: none;}
+    to {margin-top: 0; display: block;}
+}
+
+.banner img{
+    width: 100%;
+    height: auto;
+    animation-name: moveup;
+    animation-duration: .5s;
+}
+
+/* account page */
+
+.accountShowcase{
+    width: 60%;
+    height: 700px;
+    border: .1px solid rgb(140, 140, 140);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(31, 31, 31);
+}
+
+.accountShowcase h1{
+    color: white;
+    margin-left: 30px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.infoShowcase{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logoutButton{
+    text-decoration: none;
+}
+
+/* login */
+
+.formwrapper label{
+    color: white;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+#loginform{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#loginform input{
+    height: 40px;
+}
+
+#loginform .accountButton{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accountButton h1{
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 800;
+    text-decoration: none;
+    margin: 0;
+}
+
+.accountButton:hover h1{
+    color: white;
+    transition: all .3s ease;
+}
+
+#emptyWarning{
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}
+
+#referreg{
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+}
+
+#referreg a{
+    color: rgb(180, 0, 0);
+}
+
+/* register */
+#regform{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#regform input{
+    height: 40px;
+}
+
+#regform .accountButton{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#agreement{
+    margin-top: 30px;
+    height: 20px !important;
+}
+
+/* php check */
+
+.phpmessage{
+    display: grid;
+    align-items: center;
+}
+
+.phpmessage h1{
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}
