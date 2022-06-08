@@ -1,26 +1,41 @@
 <?php
-    session_start();
+session_start();
 
-    if(isset($_SESSION['logged'])){
-        $log = $_SESSION['logged'];
-    }
-    else{
-      $log = false;
-    }
-    if(isset($_SESSION['email'])){
-        $email = $_SESSION['email'];
-        $fname = $_SESSION['fname'];
-        $lname = $_SESSION['lname'];
-        $img = $_SESSION['img'];
-    }
-    else{
-        $email = null;
-        $fname = null;
-        $lname = null;
-        $img = null;
-    }
+if(isset($_SESSION['logged'])){
+    $log = $_SESSION['logged'];
+}
+else{
+    $log = false;
+}
 
-    session_write_close();
+session_write_close();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fitlogin";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM `items`";
+$result = $conn->query($sql);
+$index = 0;
+
+if($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $savedData[$index]['id'] = $row['id'];
+        $savedData[$index]['full_name'] = $row['full_name'];
+        $savedData[$index]['price'] = $row['price'];
+        $savedData[$index]['imgsrc'] = $row['imgsrc'];
+
+        $index++;
+    }
+}
+
+$conn->close();
 ?>
 
 <html>
@@ -53,26 +68,9 @@
     </a>
 </div>
 
-<div class="accountShowcase">
-    <h1>Account Information:</h1>
+<div class="shopShowcase">
 
-    <div class="infoShowcase">
-        <img id="accountimg" src="<?php echo $img; ?>">
-
-        <h2>First Name: <?php echo $fname; ?></h2>
-        <h2>Last Name: <?php echo $lname; ?></h2>
-        <h2>Email: <?php echo $email; ?></h2>
-
-        <a href="logout.php" class="logoutButton">
-            <div class="accountButton">
-                <h1>LOG OUT</h1>
-            </div>
-        </a>
-    </div>
 </div>
-
-
-
 
 
 <div class="footer">
@@ -92,7 +90,6 @@ else{
     document.getElementById("shoplink").href = "login.php";
 }
 
-if("<?php echo $img ?>" == ""){
-    document.getElementById("accountimg").src = "src/img/defaultuser.jpg";
-}
+console.log("<?php echo $index;?>")
+
 </script>

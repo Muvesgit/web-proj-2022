@@ -37,11 +37,12 @@ if ($result->num_rows > 0) {
       echo "<h1>Successful login!</h1>";
       
       session_start();
-      
+
       $_SESSION["logged"] = true;
       $_SESSION["email"] = $_POST['email'];
       $_SESSION["fname"] = $row['first_name'];
       $_SESSION["lname"] = $row['last_name'];
+      $_SESSION["img"] = $row['imgsrc'];
 
       session_write_close();
 

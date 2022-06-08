@@ -25,13 +25,13 @@
 
 <div class="header">
     <div class="logoPart">
-        <a href="#"><img src="src/img/dblogo.png"></a>
+        <a href="index.php"><img src="src/img/dblogo.png"></a>
     </div>
 
     <div class="headernav">
         <a href="index.php">HOME</a>
         <a href="#">ABOUT</a>
-        <a href="#">SHOP</a>
+        <a id="shoplink" href="#">SHOP</a>
     </div>
 
     <a id="accountButton" href="account.php">
@@ -59,6 +59,7 @@
 
     <h1 id="emptyWarning" class="hiddenitem">Please fill all the fields before sending!</h1>
     <h1 id="referreg">No account? Register <a href="register.php">here.</a></h1>
+    <h1 id="referreg">You need to be logged in to access the shop.</a></h1>
 </div>
 
 
@@ -72,9 +73,11 @@
 <script>
 if("<?php echo $log ?>"){
     document.getElementById("accountButton").href = "account.php";
+    document.getElementById("shoplink").href = "shop.php";
 }
 else{
     document.getElementById("accountButton").href = "login.php";
+    document.getElementById("shoplink").href = "login.php";
 }
 
 function checkForm(){
