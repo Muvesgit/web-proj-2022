@@ -71,6 +71,10 @@ $conn->close();
 <div id="shopShowcase" class="shopShowcase">
     <h1>Shop</h1>
     <input id="searchbar" onkeyup="search_product()" type="text" name="search" placeholder="Search products..">
+    
+    <form id="itempost" action="single.php" method="post">
+        <input id="posteditem" name="posteditem" type="hidden">
+    </form>
 </div>
 
 
@@ -117,9 +121,13 @@ for(let i = 0; i < numOfItems; ++i){
     h2.innerHTML = savedData[i].price + " RON";
 
     let h22 = document.createElement("h2");
-    h22.innerHTML = "Order";
+    h22.innerHTML = "See more";
     h22.onclick = function(id = parseInt(i)) {
-        alert("Ordered " + savedData[i].full_name);
+        document.getElementById("posteditem").value = savedData[i].full_name;
+        console.log(document.getElementById("posteditem").value);
+
+        <?php unset($_POST["posteditem"]) ?>
+        document.getElementById("itempost").submit();
     };
 
     let card = document.createElement("div");

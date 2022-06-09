@@ -42,7 +42,6 @@ if ($result->num_rows > 0) {
       $_SESSION["email"] = $_POST['email'];
       $_SESSION["fname"] = $row['first_name'];
       $_SESSION["lname"] = $row['last_name'];
-      $_SESSION["img"] = $row['imgsrc'];
 
       session_write_close();
 
