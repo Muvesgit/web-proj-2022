@@ -44,6 +44,13 @@
 
 <div class="accountShowcase">   
     <h1>About this website.</h1>
+    <h2>A website egy teremben használható felszereléseket áruló felület.</h2>
+    <h2>Lehetséges fiók létrehozása, illetve az üzleti rész kivételesen a fiók létrehozása után tekinthető meg.</h2>
+    <h2>Az üzleti rész teljes mértékben dinamikusan van leképezve, egy MySQL táblából szűri az adatokat.</h2>
+    <h2>Létezik keresés az üzlet oldalán, illetve meg lehet tekinteni mindegyik elemet külön-külön.</h2>
+    <h2>A felhasználó megtekintheti a fiókjának oldalát és az ezzel kapcsolatos információt, illetve bármikor kiléphet és visszaléphet fiókjából.</h2>
+    <h2>Ha nincs fiók, regisztrálhat.</h2>
+    <h2>A főoldalon létező elemek arra szolgálnak, hogy serkentsék a felhasználót a fiókkészítésre.</h2>
 </div>
 
 

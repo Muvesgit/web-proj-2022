@@ -216,6 +216,12 @@ body{
     text-decoration: underline;
 }
 
+.accountShowcase h2{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+
 .infoShowcase{
     width: 40%;
     margin-left: auto;
